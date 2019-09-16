@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: eureka-client
+server:
+  port: 2111
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    health-check-url-path: /actuator/health
