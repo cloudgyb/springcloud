@@ -9,3 +9,19 @@ eureka:
       default-zone: http://localhost:8761/eureka/
 server:
   port: 8888
+
+hystrix:
+  metrics:
+    enabled: true
+
+management:
+  endpoint:
+    health:
+      enabled: true
+    hystrix:
+      stream:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream,health,info

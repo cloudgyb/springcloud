@@ -9,5 +9,9 @@ eureka:
       default-zone: http://localhost:8761/eureka/
     healthcheck:
       enabled: true
-  instance:
-    health-check-url-path: /actuator/health
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,hystrix.stream
